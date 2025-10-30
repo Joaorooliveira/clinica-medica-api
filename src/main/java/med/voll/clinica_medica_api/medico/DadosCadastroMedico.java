@@ -21,7 +21,7 @@ public record DadosCadastroMedico(
         String telefone,
 
         @NotBlank
-        @Pattern(regexp ="\\d{4,6}")
+        @Pattern(regexp ="\\d{4,6}") //define o tamanho ou seja de 4 a 6 digitos apenas
         String crm,
 
         @NotNull
