@@ -12,7 +12,7 @@
 	<artifactId>clinica-medica-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>clinica-medica-api</name>
-	<description>API Rest da aplicacao Voll.med</description>
+	<description>Aplicacao API REST Voll.med</description>
 	<url/>
 	<licenses>
 		<license/>
