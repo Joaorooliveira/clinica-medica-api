@@ -7,20 +7,20 @@
 
 > 🚧 **API RESTful para o gerenciamento de uma clínica médica.** 🚧
 
-Este projeto é uma API RESTful para a clínica fictícia "Voll.med". [cite_start]A aplicação permite o gerenciamento completo (CRUD) de médicos e pacientes [cite: 594, 752, 795, 802, 806][cite_start], incluindo seus dados cadastrais e endereços[cite: 369].
+Este projeto é uma API RESTful para a clínica fictícia "Voll.med".A aplicação permite o gerenciamento completo (CRUD) de médicos e pacientes, incluindo seus dados cadastrais e endereços.
 
 ## 🚀 Funcionalidades Principais
 
 A API oferece as seguintes funcionalidades:
 
 * **Gestão de Médicos:**
-    * [cite_start]Cadastro de novos médicos (com nome, email, CRM, especialidade e endereço)[cite: 796, 797, 807, 808].
-    * [cite_start]Listagem de todos os médicos cadastrados[cite: 626].
+    * Cadastro de novos médicos (com nome, email, CRM, especialidade e endereço).
+    * Listagem de todos os médicos cadastrados.
     * Atualização de informações de médicos (como telefone e endereço).
-    * [cite_start]Exclusão lógica de médicos (inativação)[cite: 243].
+    * Exclusão lógica de médicos (inativação).
 * **Gestão de Pacientes:**
-    * [cite_start]Cadastro de novos pacientes (com nome, email, telefone, CPF e endereço)[cite: 597, 599].
-    * [cite_start]Atualização de informações de pacientes (como nome, telefone e endereço)[cite: 752, 756].
+    * Cadastro de novos pacientes (com nome, email, telefone, CPF e endereço).
+    * Atualização de informações de pacientes (como nome, telefone e endereço).
     * Listagem e detalhamento de pacientes.
 
 ## 🛠️ Tecnologias Utilizadas
@@ -28,13 +28,13 @@ A API oferece as seguintes funcionalidades:
 Este projeto foi construído utilizando as seguintes tecnologias:
 
 * **[Java 17+](https://www.oracle.com/java/)**
-* [cite_start]**[Spring Boot 3](https://spring.io/projects/spring-boot):** Framework principal para a criação da API.
-* [cite_start]**[Spring Data JPA](https://spring.io/projects/spring-data-jpa):** Para persistência de dados e mapeamento objeto-relacional (ORM)[cite: 373].
-* [cite_start]**[Maven](https://maven.apache.org/):** Gerenciador de dependências do projeto[cite: 775, 784].
-* [cite_start]**[MySQL](https://www.mysql.com/):** Banco de dados relacional para armazenamento dos dados[cite: 784, 795].
-* [cite_start]**[Flyway](https://flywaydb.org/):** Ferramenta para versionamento e migração de banco de dados (migrations).
-* [cite_start]**[Lombok](https://projectlombok.org/):** Biblioteca para reduzir código boilerplate (como Getters, Setters e Construtores)[cite: 373].
-* [cite_start]**[Spring Validation](https://docs.spring.io/):** Utilizado para validação dos dados de entrada (DTOs)[cite: 597, 598, 808].
+* **[Spring Boot 3](https://spring.io/projects/spring-boot):** Framework principal para a criação da API.
+* **[Spring Data JPA](https://spring.io/projects/spring-data-jpa):** Para persistência de dados e mapeamento objeto-relacional (ORM).
+* **[Maven](https://maven.apache.org/):** Gerenciador de dependências do projeto.
+* **[MySQL](https://www.mysql.com/):** Banco de dados relacional para armazenamento dos dados.
+* **[Flyway](https://flywaydb.org/):** Ferramenta para versionamento e migração de banco de dados (migrations).
+* **[Lombok](https://projectlombok.org/):** Biblioteca para reduzir código boilerplate (como Getters, Setters e Construtores)[cite: 373].
+* **[Spring Validation](https://docs.spring.io/):** Utilizado para validação dos dados de entrada (DTOs).
 
 ## 🔌 API Endpoints
 
@@ -42,13 +42,13 @@ Os principais endpoints disponíveis na API são:
 
 | Método | Rota | Descrição |
 | :--- | :--- | :--- |
-| `POST` | `/medicos` | [cite_start]Cadastra um novo médico[cite: 802]. |
-| `GET` | `/medicos` | [cite_start]Lista todos os médicos[cite: 626]. |
+| `POST` | `/medicos` | Cadastra um novo médico. |
+| `GET` | `/medicos` | Lista todos os médicos. |
 | `PUT` | `/medicos` | Atualiza os dados de um médico. |
-| `DELETE` | `/medicos/{id}` | [cite_start]Inativa um médico (exclusão lógica)[cite: 243]. |
-| `POST` | `/pacientes` | [cite_start]Cadastra um novo paciente[cite: 594]. |
+| `DELETE` | `/medicos/{id}` | Inativa um médico (exclusão lógica). |
+| `POST` | `/pacientes` | Cadastra um novo paciente. |
 | `GET` | `/pacientes` | Lista todos os pacientes. |
-| `PUT` | `/pacientes` | [cite_start]Atualiza os dados de um paciente[cite: 752]. |
+| `PUT` | `/pacientes` | Atualiza os dados de um paciente. |
 
 ## ⚙️ Como Executar o Projeto
 
