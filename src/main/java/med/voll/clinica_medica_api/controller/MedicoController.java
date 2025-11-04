@@ -31,8 +31,8 @@ public class MedicoController {
         // metodo com instrucoes de paginacao e esse  @PageableDefault(size = 10,sort ={"nome"} e para definir o
         // padrao sem precisar alterar a url entao se n mexer nada la na url por padrao vai ficar assim caso queira
         // definir como vc vai querer la na url ai sobrescreve essa Anotacao
-
-        return repository.findAll(paginacao).map(DadosListagemMedico::new); //retorno dps com o page
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
+        //return repository.findAll(paginacao).map(DadosListagemMedico::new); //retorno dps com o page
         //return repository.findAll(paginacao).stream().map(DadosListagemMedico::new).toList(); retorno antes
     }
 
@@ -42,5 +42,13 @@ public class MedicoController {
         var medico =repository.getReferenceById(dados.id());
         medico.atualizarInformacoes(dados);
 
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluir(@PathVariable Long id){
+        var medico =repository.getReferenceById(id);
+        medico.excluir();
+        //repository.deleteById(id); //Deleta pelo ID(Exclui do banco de dados)
     }
 }
