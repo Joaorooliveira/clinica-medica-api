@@ -1,9 +1,9 @@
-package med.voll.clinica_medica_api.paciente;
+package med.voll.clinica_medica_api.domain.paciente;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
-import med.voll.clinica_medica_api.endereco.Endereco;
+import med.voll.clinica_medica_api.domain.endereco.Endereco;
 
 
 @Table(name ="pacientes")

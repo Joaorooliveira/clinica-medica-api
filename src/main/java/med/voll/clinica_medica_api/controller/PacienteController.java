@@ -1,10 +1,8 @@
 package med.voll.clinica_medica_api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.clinica_medica_api.medico.DadosDetalhamentoMedico;
-import med.voll.clinica_medica_api.medico.DadosDetalhamentoPaciente;
-import med.voll.clinica_medica_api.medico.DadosListagemMedico;
-import med.voll.clinica_medica_api.paciente.*;
+import med.voll.clinica_medica_api.domain.medico.DadosDetalhamentoPaciente;
+import med.voll.clinica_medica_api.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

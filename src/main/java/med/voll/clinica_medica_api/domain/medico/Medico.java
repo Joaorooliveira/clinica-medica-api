@@ -1,10 +1,10 @@
-package med.voll.clinica_medica_api.medico;
+package med.voll.clinica_medica_api.domain.medico;
 
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
-import med.voll.clinica_medica_api.endereco.Endereco;
+import med.voll.clinica_medica_api.domain.endereco.Endereco;
 
 @Table(name= "medicos")
 @Entity(name="Medico")

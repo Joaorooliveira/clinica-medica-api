@@ -1,7 +1,5 @@
-package med.voll.clinica_medica_api.paciente;
+package med.voll.clinica_medica_api.domain.paciente;
 
-import aj.org.objectweb.asm.commons.Remapper;
-import med.voll.clinica_medica_api.medico.Medico;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

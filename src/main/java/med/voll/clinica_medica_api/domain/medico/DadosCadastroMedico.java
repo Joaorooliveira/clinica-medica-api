@@ -1,26 +1,31 @@
-package med.voll.clinica_medica_api.paciente;
+package med.voll.clinica_medica_api.domain.medico;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import med.voll.clinica_medica_api.endereco.DadosEndereco;
+import med.voll.clinica_medica_api.domain.endereco.DadosEndereco;
 
-public record DadosCadastroPaciente(
+public record DadosCadastroMedico(
+
+
         @NotBlank
         String nome,
 
-        @Email
         @NotBlank
+        @Email
         String email,
 
         @NotBlank
-        @Pattern(regexp = "\\d{9,11}") //ou seja o numero pode ser de 9 a 11 digitos
         String telefone,
 
         @NotBlank
-        String cpf,
+        @Pattern(regexp ="\\d{4,6}") //define o tamanho ou seja de 4 a 6 digitos apenas
+        String crm,
+
+        @NotNull
+        Especialidade especialidade,
 
         @NotNull
         @Valid
