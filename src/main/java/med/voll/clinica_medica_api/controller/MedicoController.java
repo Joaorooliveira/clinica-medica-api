@@ -1,7 +1,6 @@
 package med.voll.clinica_medica_api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.clinica_medica_api.endereco.Endereco;
 import med.voll.clinica_medica_api.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,14 +30,10 @@ public class MedicoController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DadosListagemMedico>> listar(@PageableDefault(size = 10,sort ={"nome"}) Pageable paginacao){ //Tipo de
-        // metodo com instrucoes de paginacao e esse  @PageableDefault(size = 10,sort ={"nome"} e para definir o
-        // padrao sem precisar alterar a url entao se n mexer nada la na url por padrao vai ficar assim caso queira
-        // definir como vc vai querer la na url ai sobrescreve essa Anotacao
+    public ResponseEntity<Page<DadosListagemMedico>> listar(@PageableDefault(size = 10,sort ={"nome"})
+                                                                Pageable paginacao){
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
         return ResponseEntity.ok(page);
-        //return repository.findAll(paginacao).map(DadosListagemMedico::new); //retorno dps com o page
-        //return repository.findAll(paginacao).stream().map(DadosListagemMedico::new).toList(); retorno antes
     }
 
     @PutMapping
@@ -54,7 +49,6 @@ public class MedicoController {
     public ResponseEntity excluir(@PathVariable Long id){
          var medico =repository.getReferenceById(id);
          medico.excluir();
-        //repository.deleteById(id); //Deleta pelo ID(Exclui do banco de dados)
         return ResponseEntity.noContent().build();
     }
 
