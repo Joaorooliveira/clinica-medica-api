@@ -1,7 +1,6 @@
 package med.voll.clinica_medica_api.infra.security;
 
 
-import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -56,4 +55,4 @@ public class SecurityFilter  extends OncePerRequestFilter {
         return null;
 
     }
-}
+}''
