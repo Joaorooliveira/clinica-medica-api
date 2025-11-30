@@ -28,4 +28,6 @@ public class ConsultaController {
         return ResponseEntity.ok(new DadosDetalhamentoConsulta(null,null,null,null));
 
     }
+
+
 }
