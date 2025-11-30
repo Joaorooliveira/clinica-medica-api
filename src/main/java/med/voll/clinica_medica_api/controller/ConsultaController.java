@@ -2,31 +2,37 @@ package med.voll.clinica_medica_api.controller;
 
 import jakarta.validation.Valid;
 import med.voll.clinica_medica_api.domain.consulta.AgendaDeConsultas;
+import med.voll.clinica_medica_api.domain.consulta.CancelamentoDeConsultas;
 import med.voll.clinica_medica_api.domain.consulta.DadosAgendamentoConsulta;
-import med.voll.clinica_medica_api.domain.consulta.DadosDetalhamentoConsulta;
+import med.voll.clinica_medica_api.domain.consulta.DadosCancelamentoConsulta;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("consultas")
 public class ConsultaController {
 
     private final AgendaDeConsultas agenda;
+    private final CancelamentoDeConsultas cancelamento;
 
-    public ConsultaController(AgendaDeConsultas agenda) {
+    public ConsultaController(AgendaDeConsultas agenda, CancelamentoDeConsultas cancelamento) {
         this.agenda = agenda;
+        this.cancelamento = cancelamento;
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity agendar(@RequestBody @Valid DadosAgendamentoConsulta dados){
-        agenda.agendar(dados);
-        return ResponseEntity.ok(new DadosDetalhamentoConsulta(null,null,null,null));
+    public ResponseEntity agendar(@RequestBody @Valid DadosAgendamentoConsulta dados) {
+        var dto = agenda.agendar(dados);
+        return ResponseEntity.ok(dto);
 
+    }
+
+    @DeleteMapping
+    public ResponseEntity cancelarConsulta(@RequestBody @Valid DadosCancelamentoConsulta dados) {
+        cancelamento.CancelamentoDeConsultas(dados);
+        return ResponseEntity.noContent().build();
     }
 
 
