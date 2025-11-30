@@ -3,6 +3,7 @@ package med.voll.clinica_medica_api.domain.consulta;
 import jakarta.persistence.EntityNotFoundException;
 import med.voll.clinica_medica_api.domain.consulta.validacoes.ValidadorCancelamentoAntecedencia;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CancelamentoDeConsultas {
@@ -15,10 +16,11 @@ public class CancelamentoDeConsultas {
         this.validador = validador;
     }
 
-
+    @Transactional
     public void CancelamentoDeConsultas(DadosCancelamentoConsulta dados) {
-        var consulta = repository.findById(dados.idConsulta()).orElseThrow(()-> new EntityNotFoundException(
+        var consulta = repository.findById(dados.idConsulta()).orElseThrow(() -> new EntityNotFoundException(
                 "ID da consulta errada, ou consulta nao existe"));
-    validador.validar(dados);
+        validador.validar(dados);
+        repository.deleteById(dados.idConsulta());
     }
 }
