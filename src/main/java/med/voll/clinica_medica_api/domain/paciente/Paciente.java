@@ -7,7 +7,7 @@ import med.voll.clinica_medica_api.domain.endereco.Endereco;
 
 
 @Table(name ="pacientes")
-@Entity(name = "paciente")
+@Entity(name = "Paciente")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
