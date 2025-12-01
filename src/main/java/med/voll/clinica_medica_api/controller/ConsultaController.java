@@ -1,5 +1,7 @@
 package med.voll.clinica_medica_api.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.clinica_medica_api.domain.consulta.AgendaDeConsultas;
 import med.voll.clinica_medica_api.domain.consulta.CancelamentoDeConsultas;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("consultas")
+@SecurityRequirement(name = "bearer-key")
 public class ConsultaController {
 
     private final AgendaDeConsultas agenda;
@@ -23,6 +26,7 @@ public class ConsultaController {
 
     @PostMapping
     @Transactional
+    @Operation(summary = "Agendar Consulta", description = "Agenda Consulta e retorna status")
     public ResponseEntity agendar(@RequestBody @Valid DadosAgendamentoConsulta dados) {
         var dto = agenda.agendar(dados);
         return ResponseEntity.ok(dto);
@@ -30,6 +34,7 @@ public class ConsultaController {
     }
 
     @DeleteMapping
+    @Operation(summary = "Cancelar Consulta", description = "Cancela Consulta pelo Id")
     public ResponseEntity cancelarConsulta(@RequestBody @Valid DadosCancelamentoConsulta dados) {
         cancelamento.CancelamentoDeConsultas(dados);
         return ResponseEntity.noContent().build();

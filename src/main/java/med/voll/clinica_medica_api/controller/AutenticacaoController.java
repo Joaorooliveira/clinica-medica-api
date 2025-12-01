@@ -1,9 +1,9 @@
 package med.voll.clinica_medica_api.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import med.voll.clinica_medica_api.domain.usuario.DadosAutenticacao;
 import med.voll.clinica_medica_api.domain.usuario.Usuario;
-import med.voll.clinica_medica_api.domain.usuario.UsuarioRepository;
 import med.voll.clinica_medica_api.infra.security.DadosTokenJWT;
 import med.voll.clinica_medica_api.infra.security.TokenService;
 import org.springframework.http.ResponseEntity;
@@ -20,12 +20,14 @@ public class AutenticacaoController {
 
     private final AuthenticationManager manager;
     private final TokenService tokenService;
+
     public AutenticacaoController(AuthenticationManager manager, TokenService tokenService) {
         this.manager = manager;
         this.tokenService = tokenService;
     }
 
     @PostMapping
+    @Operation(summary = "Efetuar Login", description = "Efetua Login e retorna Token JWT")
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
         var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var autentication = manager.authenticate(authenticationToken);
