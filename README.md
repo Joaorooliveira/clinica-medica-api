@@ -25,7 +25,7 @@ A API oferece as seguintes funcionalidades:
     * Cadastro, listagem (com paginação), atualização e exclusão lógica (inativação) de médicos.
     * Busca de médicos ativos.
 
-* ** Gestão de Pacientes:**
+* **Gestão de Pacientes:**
     * Cadastro, listagem, atualização e inativação de pacientes.
 
 * **📅 Gestão de Consultas:**
