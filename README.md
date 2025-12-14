@@ -25,7 +25,7 @@ A API oferece as seguintes funcionalidades:
     * Cadastro, listagem (com paginação), atualização e exclusão lógica (inativação) de médicos.
     * Busca de médicos ativos.
 
-* **d Gestão de Pacientes:**
+* **Gestão de Pacientes:**
     * Cadastro, listagem, atualização e inativação de pacientes.
 
 * **📅 Gestão de Consultas:**
@@ -86,7 +86,7 @@ Resumo dos principais endpoints:
 
 1. **Clone o repositório:**
    ```sh
-   git clone [https://github.com/Joaorooliveira/clinica-medica-api.git](https://github.com/Joaorooliveira/clinica-medica-api.git)
+   git clone [https://github.com/Joaorooliveira/clinica-medica-api.git]
    cd clinica-medica-api
    ```
 
