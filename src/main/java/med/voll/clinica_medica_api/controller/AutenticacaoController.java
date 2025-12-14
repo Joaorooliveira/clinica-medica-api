@@ -1,6 +1,7 @@
 package med.voll.clinica_medica_api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import med.voll.clinica_medica_api.domain.usuario.DadosAutenticacao;
 import med.voll.clinica_medica_api.domain.usuario.Usuario;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
+@Tag(name = "Login", description = "Gerenciador de Login")
 public class AutenticacaoController {
 
     private final AuthenticationManager manager;

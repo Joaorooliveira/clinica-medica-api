@@ -2,6 +2,7 @@ package med.voll.clinica_medica_api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import med.voll.clinica_medica_api.domain.consulta.AgendaDeConsultas;
 import med.voll.clinica_medica_api.domain.consulta.CancelamentoDeConsultas;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("consultas")
 @SecurityRequirement(name = "bearer-key")
+@Tag(name = "Consultas", description = "Gerenciador de Consultas")
 public class ConsultaController {
 
     private final AgendaDeConsultas agenda;

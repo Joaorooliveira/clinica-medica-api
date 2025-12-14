@@ -2,6 +2,7 @@ package med.voll.clinica_medica_api.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import med.voll.clinica_medica_api.domain.medico.DadosDetalhamentoPaciente;
 import med.voll.clinica_medica_api.domain.paciente.*;
@@ -18,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 @RequestMapping("pacientes")
 @SecurityRequirement(name = "bearer-key")
+@Tag(name = "Pacientes", description = "Gerenciador de Pacientes")
 public class PacienteController {
 
     @Autowired
