@@ -117,5 +117,4 @@ Para executar os testes automatizados (unitários e de integração):
 ```
 
 📄 Licença
-
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
